@@ -2,48 +2,48 @@ import {
   ICalculator,
   ICalculatorPresenter,
   ICalculatorView,
-} from "./interfaces";
+} from './interfaces'
 
 export class CalculatorPresenter implements ICalculatorPresenter {
-  view: ICalculatorView;
-  calculator: ICalculator;
+  view: ICalculatorView
+  calculator: ICalculator
 
   constructor(view: ICalculatorView, calculator: ICalculator) {
-    this.view = view;
-    this.calculator = calculator;
+    this.view = view
+    this.calculator = calculator
   }
 
   onPlusClicked() {
-    this.operation(this.calculator.add);
+    this.operation(this.calculator.add)
   }
 
   onMinusClicked() {
-    this.operation(this.calculator.subtract);
+    this.operation(this.calculator.subtract)
   }
 
   onMultiplyClicked() {
-    this.operation(this.calculator.multiply);
+    this.operation(this.calculator.multiply)
   }
 
   onDivideClicked() {
-    this.operation(this.calculator.divide);
+    this.operation(this.calculator.divide)
   }
 
-  private operation(func: (arg0: number, arg1: number) => any) {
-    const a = Number.parseFloat(this.view.firstArgument());
-    const b = Number.parseFloat(this.view.secondArgument());
+  private operation(func: (arg0: number, arg1: number) => number) {
+    const a = Number.parseFloat(this.view.firstArgument())
+    const b = Number.parseFloat(this.view.secondArgument())
 
     if (Number.isNaN(a) || Number.isNaN(b)) {
-      this.view.printError("Wrong input");
-      return;
+      this.view.printError('Wrong input')
+      return
     }
 
     try {
-      const result = func(a, b);
-      this.view.printResult(result);
+      const result = func(a, b)
+      this.view.printResult(result)
     } catch (error) {
       if (error instanceof Error) {
-        this.view.printError(error.message);
+        this.view.printError(error.message)
       }
     }
   }

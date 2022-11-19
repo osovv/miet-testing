@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "eslint --fix --ext .ts,.tsx .",
+    "lint:check": "eslint --ext .ts,.tsx .",
+    "format": "prettier --write --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore",
+    "format:check": "prettier --check --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -18,6 +22,8 @@
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.28.0",
+    "eslint-kit": "^6.9.0",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.6.4",
