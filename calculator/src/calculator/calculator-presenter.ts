@@ -30,6 +30,7 @@ export class CalculatorPresenter implements ICalculatorPresenter {
   }
 
   private operation(func: (arg0: number, arg1: number) => number) {
+    this.view.printError('')
     const a = Number.parseFloat(this.view.firstArgument())
     const b = Number.parseFloat(this.view.secondArgument())
 
