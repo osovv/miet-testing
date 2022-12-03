@@ -10,7 +10,7 @@ module.exports = configure({
   ],
   overrides: [
     {
-      files: ['vite.config.ts'],
+      files: ['vite.config.ts', 'playwright-ct.config.ts'],
       rules: {
         'import/no-default-export': ['off'],
       },
