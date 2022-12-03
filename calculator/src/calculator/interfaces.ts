@@ -10,6 +10,10 @@ export interface ICalculatorView {
   printError: (error: string) => void
   firstArgument: (_: void) => string
   secondArgument: (_: void) => string
+  result: number
+  error: string
+  setFirstArgument: (arg: string) => void
+  setSecondArgument: (arg: string) => void
 }
 
 export interface ICalculatorPresenter {

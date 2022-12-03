@@ -2,7 +2,6 @@
   "name": "1-lab",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -11,7 +10,9 @@
     "lint": "eslint --fix --ext .ts,.tsx .",
     "lint:check": "eslint --ext .ts,.tsx .",
     "format": "prettier --write --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore",
-    "format:check": "prettier --check --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore"
+    "format:check": "prettier --check --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore",
+    "test-ct": "playwright test -c playwright-ct.config.ts",
+    "test-ft": "node ./node_modules/@cucumber/cucumber/bin/cucumber-js --require cucumber.conf.cjs --require-module ts-node/register --require tests/acceptance/stepDefinitions/**/*.cjs --format @cucumber/pretty-formatter tests/acceptance"
   },
   "dependencies": {
     "mobx": "^6.7.0",
@@ -20,14 +21,20 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^8.9.0",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@playwright/experimental-ct-react": "^1.28.0",
+    "@playwright/test": "^1.28.1",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.28.0",
     "eslint-kit": "^6.9.0",
+    "playwright": "^1.28.1",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
+    "ts-node": "^10.9.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
     "vitest": "^0.25.2"
