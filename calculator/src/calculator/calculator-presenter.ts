@@ -41,7 +41,7 @@ export class CalculatorPresenter implements ICalculatorPresenter {
 
     try {
       const result = func(a, b)
-      this.view.printResult(result)
+      this.view.printResult(Number.parseFloat(result.toPrecision(12)))
     } catch (error) {
       if (error instanceof Error) {
         this.view.printError(error.message)
