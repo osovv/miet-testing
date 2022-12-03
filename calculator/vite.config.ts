@@ -7,6 +7,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   test: {
-    include: ['**/*.spec.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    include: ['**/*.spec.{ts,tsx}'],
   },
 })

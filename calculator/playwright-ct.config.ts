@@ -6,7 +6,7 @@ import { devices } from '@playwright/experimental-ct-react'
  */
 const config: PlaywrightTestConfig = {
   testDir: './',
-  testMatch: /.*(test)\.(ts)/,
+  testMatch: /.*(test)\.(ts|tsx)/,
   /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
   /* Maximum time one test can run for. */
@@ -36,12 +36,6 @@ const config: PlaywrightTestConfig = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-      },
-    },
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
       },
     },
   ],
