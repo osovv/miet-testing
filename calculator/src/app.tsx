@@ -54,6 +54,9 @@ export const AppComponent = observer(
   ({ view, presenter }: AppComponentProps) => {
     return (
       <Layout>
+        <div className="mx-auto flex items-center justify-center">
+          <h1 className="mb-5 font-bold text-3xl">Calculator</h1>
+        </div>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
           <Input
             id="first"
