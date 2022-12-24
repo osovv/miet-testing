@@ -5,8 +5,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "sync": "node --prof --heap-prof --cpu-prof sync.js && node --prof-process isolate-* > out.log",
-    "conc": "node concurrent.js",
-    "conc-prof": "node --prof --heap-prof --cpu-prof concurrent.js"
+    "prof-sync": "node --prof --heap-prof --cpu-prof sync.js && node --prof-process isolate-* > out.log",
+    "prof-conc": "node --prof --heap-prof --cpu-prof concurrent.js",
+    "run-conc": "node concurrent.js",
+    "run-sync": "node sync.js"
+  },
+  "dependencies": {
+    "stackvis": "^0.5.0"
   }
 }

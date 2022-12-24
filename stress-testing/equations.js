@@ -7,7 +7,8 @@ export const solve = () => {
   for (let i = 0; i < 100; i++) {
     matrices.push(new Matrix(randomData(100, 100)));
   }
-  matrices.reduce((acc, curr) => {
+  const res = matrices.reduce((acc, curr) => {
     return mul(acc, curr);
   });
+  return res.getData();
 };

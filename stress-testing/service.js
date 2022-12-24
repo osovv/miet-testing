@@ -3,5 +3,9 @@ import { solve } from "./equations.js";
 
 // Тут, асинхронно, не блокируя главный поток,
 // можно выполнять тяжёлые вычисления.
-solve();
-parentPort.postMessage({ done: true, id: threadId });
+const func = async () => {
+  const res = solve();
+  parentPort.postMessage({ res, id: threadId });
+};
+
+await func();

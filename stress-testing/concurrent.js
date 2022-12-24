@@ -14,7 +14,7 @@ function runService() {
         new Worker("./service.js", { workerData: { func: solve.toString() } })
     );
   arr.forEach((worker) => {
-    worker.on("message", (value) => console.log(value));
+    worker.on("message", (value) => {});
     worker.on("error", (value) => console.error(value));
     worker.on("exit", (code) => {
       if (code !== 0) console.error("err");

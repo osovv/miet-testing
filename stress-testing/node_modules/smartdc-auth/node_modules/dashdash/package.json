@@ -1,0 +1,25 @@
+{
+    "name": "dashdash",
+    "description": "A light, featureful and explicit option parsing library.",
+    "version": "1.10.1",
+    "author": "Trent Mick <trentm@gmail.com> (http://trentm.com)",
+    "keywords": ["option", "parser", "parsing", "cli", "command", "args"],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/trentm/node-dashdash.git"
+    },
+    "main": "./lib/dashdash.js",
+    "dependencies": {
+        "assert-plus": "0.1.x"
+    },
+    "devDependencies": {
+        "nodeunit": "0.9.x"
+    },
+    "engines": {
+        "node": ">=0.8"
+    },
+    "scripts": {
+        "test": "nodeunit test/*.test.js"
+    },
+    "license": "MIT"
+}

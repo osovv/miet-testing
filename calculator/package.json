@@ -12,7 +12,8 @@
     "lint:check": "eslint --ext .ts,.tsx .",
     "format": "prettier --write --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore",
     "format:check": "prettier --check --plugin-search-dir=. \"**/*.{ts,tsx,md,json,cjs}\" --ignore-path .gitignore",
-    "test-ct": "playwright test -c playwright-ct.config.ts"
+    "test-ct": "playwright test -c playwright-ct.config.ts",
+    "go": "npx playwright test -c playwright.config.ts"
   },
   "dependencies": {
     "mobx": "^6.7.0",
