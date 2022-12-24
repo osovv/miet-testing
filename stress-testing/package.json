@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "name": "stress-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sync": "node --prof --heap-prof --cpu-prof sync.js && node --prof-process isolate-* > out.log",
+    "conc": "node concurrent.js",
+    "conc-prof": "node --prof --heap-prof --cpu-prof concurrent.js"
+  }
+}
